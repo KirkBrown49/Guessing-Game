@@ -14,18 +14,17 @@ var playingGame = true
 //this loop will run while we're playing the game
 repeat {
     //this is a random number that we have generated. We cast it from a UInt32 to an int
-    let randomNumber = Int(arc4random_uniform(101))
+    let randomNumber = Int(arc4random_uniform(201))
     
-    //printing out the rsndom number for dubugging
-    print("Random number: \(randomNumber)")
-    print(randomNumber.)
+    //printing out the random number for dubugging
+    //print("Random number: \(randomNumber)")
     
     //this is the number of guesses a user has to get it right.
-    var numberOfGuesses = 5
+    var numberOfGuesses = 6
     
     //Welcome the user and prompt them for imput
     print("Welcome to the guessing game!")
-    print("Please guess a number between 0 and 100.")
+    print("Please guess a number between 0 and 200.")
     var userGuess = Int(readLine()!)
     
     // if the user enters a value that can't be converted to an integer, userGuess will equal nil
@@ -60,7 +59,10 @@ repeat {
             }
         }
     }
-    //Check to see if the user is out of guesses and hasn't
+    
+    // Tried creating a while statement for a hint, didn't work!
+    
+    //Check to see if the user is out of guesses
     if numberOfGuesses == 1 && userGuess != randomNumber {
         print("You ran out of tries. The correct answer was \(randomNumber)")
         print("Game Over!")
